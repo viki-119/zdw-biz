@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-react"
+  ],
+  // "plugins": [
+  //     ["transform-react-jsx", {
+  //         "pragma": "React.createElement"//大部分框架喜欢改成h
+  //     }]
+  // ]
+}
