@@ -1,20 +1,52 @@
+import { string, bool } from 'prop-types';
 import React from 'react';
-import { string } from 'prop-types';
 import './block.less';
 
-// const { string, bool, object } = React.propTypes;
-
 export default function Block(props) {
-	// console.log('122','ccc')
+  const title = props.title;
+  const subTitle = props.subTitle;
+  const withLine =  props.withLine;
+  const extra = props.extra || '';
+  const className = props.className || '';
+
 	return (
-  <div id="block">
-    <div className="title">{props.title}</div>
-      {props.name}
-      {props.tt}
+    <div className={`zdw_block ${className}`}>
+      <div className="zdw_block_title">
+        <div className="zdw_block_title_icon" />
+        <span className="zdw_block_title_text">
+          {title}
+        </span>
+        {
+          subTitle && <span className="zdw_block_subtitle_text">{subTitle}</span>
+        }
+        {
+          withLine && <div className="zdw_block_title_line" />
+        }
+        {
+          extra && <div className="zdw_block_title_extra">{extra}</div>
+        }
+      </div>
+      {
+        props.children &&
+        <div className="zdw_block_wrapper">
+          {props.children}
+        </div>
+      }
 		</div>
 	);
 }
 
 Block.propTypes = {
-	title: string
+	title: string.isRequired,
+	subTitle: string,
+	withLine: bool,
+	className: string,
+};
+
+Block.defaultProps = {
+  title: '',
+  subTitle: '',
+  withLine: false,
+  extra: null,
+  className: '',
 };
