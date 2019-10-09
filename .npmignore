@@ -1,4 +1,5 @@
 node_modules
+demo
 index.html
 src
 dist
@@ -6,4 +7,7 @@ webpack.config.js
 .babellrc
 .editorconfig
 .eslintrc.js
-old-lib
+.gitignore
+.npmignore
+npm-debug.log
+package-log.json
