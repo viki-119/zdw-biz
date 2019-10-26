@@ -3,13 +3,13 @@ import React from 'react';
 import './block.less';
 
 export default function Block(props) {
-  const title = props.title;
-  const subTitle = props.subTitle;
-  const withLine =  props.withLine;
+  const { title } = props;
+  const { subTitle } = props;
+  const { withLine } = props;
   const extra = props.extra || '';
   const className = props.className || '';
 
-	return (
+  return (
     <div className={`zdw_block ${className}`}>
       <div className="zdw_block_title">
         <div className="zdw_block_title_icon" />
@@ -27,20 +27,22 @@ export default function Block(props) {
         }
       </div>
       {
-        props.children &&
-        <div className="zdw_block_wrapper">
-          {props.children}
-        </div>
+        props.children
+        && (
+          <div className="zdw_block_wrapper">
+            {props.children}
+          </div>
+        )
       }
-		</div>
-	);
+    </div>
+  );
 }
 
 Block.propTypes = {
-	title: string.isRequired,
-	subTitle: string,
-	withLine: bool,
-	className: string,
+  title: string.isRequired,
+  subTitle: string,
+  withLine: bool,
+  className: string,
 };
 
 Block.defaultProps = {
@@ -48,5 +50,5 @@ Block.defaultProps = {
   subTitle: '',
   withLine: false,
   extra: null,
-  className: '',
+  className: ''
 };

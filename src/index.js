@@ -1,6 +1,7 @@
 import Block from './block';
+import Blank from './blank';
 
 const Obj = {
-	Block
+	Block, Blank
 };
 module.exports = Obj;

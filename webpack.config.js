@@ -43,17 +43,32 @@ module.exports = merge({}, {
   ],
   module:{
     rules:[
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   // enforce: 'pre',
+      //   exclude: /node_modules/,
+      //   include: path.resolve(__dirname, 'src'),
+      //   use: ['eslint-loader'],
+      // },
       {
         test:/\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [{
             loader: "babel-loader",
-            // options: {
-            //   presets: [
-            //     "@babel/env",
-            //     "@babel/preset-react"
-            //   ]
-            // }
+            options: {
+              presets: [
+                "@babel/env",
+                "@babel/preset-react",
+                "@babel/preset-flow"
+              ],
+              "plugins": [
+                ["import", {
+                  "libraryName": "antd",
+                  "libraryDirectory": "es",
+                  "style": "css" // `style: true` 会加载 less 文件
+                }]
+              ]
+            }
         }],
       },
       // {

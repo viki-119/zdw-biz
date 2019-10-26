@@ -21,14 +21,16 @@
     "antd": "^3.23.4",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.12.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "eslint": "^6.3.0",
+    "editorconfig": "^0.15.3",
+    "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.10.3",
@@ -40,7 +42,8 @@
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.2",
-    "zdw-biz": "^1.1.1"
+    "zdw-biz": "^1.1.1",
+    "zdw-utils": "^1.0.3"
   },
   "scripts": {
     "start": "webpack-dev-server",
@@ -48,7 +51,7 @@
     "build": "del /S /F /Q lib && npx babel src --watch -D -d lib",
     "webpack": "rimraf dist && webpack --mode development --watch --hot --progress",
     "clean": "rimraf dist ./lib",
-    "lint": "eslint --ext .js,.jsx src"
+    "lint": "eslint --fix --ext .js,.jsx src"
   },
   "repository": {
     "type": "git",
