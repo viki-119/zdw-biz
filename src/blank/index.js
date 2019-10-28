@@ -3,9 +3,13 @@ import { number } from 'prop-types';
 
 export default function Blank(props) {
   const { height, ...rest } = props;
+  const styleObj = {
+    height: `${height}px`,
+    width: '100%'
+  }
 
   return (
-    <div style={{height: `${height}px`}} {...rest} />
+    <div style={styleObj} {...rest} />
   );
 }
 
