@@ -8,6 +8,7 @@ import { Menu, Button } from 'antd';
 import Block from '../../src/block';
 import Blank from '../../src/blank';
 import Test from '../component/test/father';
+import './index.less';
 
 // import 'antd/dist/antd.css';
 
@@ -15,7 +16,7 @@ const { SubMenu } = Menu;
 
 const routes = [
 	{
-		path: '/',
+		path: '/test',
 		component: Test
 	},
 	{
@@ -32,30 +33,44 @@ const routes = [
 
 ReactDom.render(
   <HashRouter>
-    <Menu>
-    <Menu.Item>菜单项</Menu.Item>
-    <SubMenu title="子菜单">
-        <Menu.Item>子菜单项</Menu.Item>
-      </SubMenu>
-      </Menu>
-    <li>
-      <Link to="/block">block</Link>
-      <Block title='标题' subTitle='副标题' withLine extra={'哈哈'} />
-      <Blank height={40} />
-    </li>
-    <Switch>
-    {
-      routes.map((route, i) => (
-        <Route
-          key={i}
-          path={route.path}
-          render={(props) => (
-            // pass the sub-routes down to keep nesting
-            <route.component {...props} routes={route.routes}/>
-          )}
-        />))
-    }
-      <Route exact path="/" component={Block} />
-    </Switch>
+    <div id="react-content">
+      <div className="frame">
+        <div className="head">head</div>
+        <div className="content">
+          <div className="viewport">
+            <div className="menu" style={{minHeight: 1083}}>
+              <Menu mode='inline'>
+                <Menu.Item>
+                  <Link to="/block">block</Link>
+                </Menu.Item>
+                <SubMenu title="子菜单">
+                  <Menu.Item>
+                    <Link to="/test">test</Link>
+                  </Menu.Item>
+                </SubMenu>
+              </Menu>
+            </div>
+            <div className="main-center">
+              <div className="container">
+                <Switch>
+                  {
+                  routes.map((route, i) => (
+                    <Route
+                      key={i}
+                      path={route.path}
+                      render={(props) => (
+                        // pass the sub-routes down to keep nesting
+                        <route.component {...props} routes={route.routes}/>
+                      )}
+                    />))
+                  }
+                  <Route exact path="/" component={Block} />
+                </Switch>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 	</HashRouter>, document.getElementById('root')
 );
