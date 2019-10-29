@@ -7,6 +7,8 @@ import {
 import { Menu, Button } from 'antd';
 import Block from '../../src/block';
 import Blank from '../../src/blank';
+import Test from '../component/test/father';
+
 // import 'antd/dist/antd.css';
 
 const { SubMenu } = Menu;
@@ -14,7 +16,7 @@ const { SubMenu } = Menu;
 const routes = [
 	{
 		path: '/',
-		component: Block
+		component: Test
 	},
 	{
 		path: '/block',
