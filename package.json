@@ -43,7 +43,7 @@
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.2",
-    "zdw-biz": "^1.1.1",
+    "zdw-biz": "^1.1.0",
     "zdw-utils": "^1.0.3"
   },
   "scripts": {
@@ -52,6 +52,7 @@
     "build": "del /S /F /Q lib && npx babel src --watch -D -d lib",
     "webpack": "rimraf dist && webpack --mode development --watch --hot --progress",
     "clean": "rimraf dist ./lib",
+    "update": "rimraf ./node_modules && cnpm install",
     "lint": "eslint --fix --ext .js,.jsx src"
   },
   "repository": {
