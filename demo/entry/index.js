@@ -70,6 +70,7 @@ ReactDom.render(
             </div>
           </div>
         </div>
+        <div className="foot">foot</div>
       </div>
     </div>
 	</HashRouter>, document.getElementById('root')
