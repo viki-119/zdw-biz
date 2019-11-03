@@ -1,0 +1,45 @@
+@pix: 50px;
+
+#father {
+  .pattern {
+    height: 100px;
+    line-height: 100px;
+    background-color: red;
+    // display: inline-block;
+
+    .enableB {
+      position: absolute;
+      top: 36%;
+    }
+  }
+
+  /*组件入场前的状态*/
+  .animation-enter{
+    transform:translateY(-@pix);
+    opacity:0;
+  }
+
+  /*组件正在入场时候的动画, all 指的是所有属性一起变化，ease-in-out 先快后慢的一种时间线*/
+  .animation-enter-active{
+    transform:translateY(0);
+    opacity:1;
+    transition:all 1000ms ease-in-out;
+  }
+
+  /*组件出场前的动画*/
+  .animation-exit {
+    opacity: 1;
+  }
+
+  /*组件正在出场的动画*/
+  .animation-exit-active {
+    opacity:0;
+    transform:translateY(@pix);
+    transition:all 1000ms ease-out;
+  }
+  /*组件入场前的状态*/
+  .animationb-enter{
+    transform:translateY(-@pix);
+    opacity:0;
+  }
+}
