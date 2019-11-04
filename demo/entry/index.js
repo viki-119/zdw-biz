@@ -8,6 +8,7 @@ import { Menu, Button } from 'antd';
 import Block from '../../src/block';
 import Blank from '../../src/blank';
 import Test from '../component/test/father';
+import Canvas from '../component/test/canvas';
 import './index.less';
 
 // import 'antd/dist/antd.css';
@@ -18,6 +19,10 @@ const routes = [
 	{
 		path: '/test',
 		component: Test
+	},
+	{
+		path: '/canvas',
+		component: Canvas
 	},
 	{
 		path: '/block',
