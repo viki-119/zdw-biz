@@ -10,7 +10,7 @@ export default class Child extends PureComponent {
     console.log('Child render');
     const { person } = this.props;
     return(
-      <div>
+      <div className="child-render">
         {person.name}
       </div>
     );

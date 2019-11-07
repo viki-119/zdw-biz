@@ -1,6 +1,7 @@
 import React, {Component, PureComponent} from 'react';
 import PropType from 'prop-types';
 import {CSSTransition, TransitionGroup,} from 'react-transition-group';
+import { Button } from 'antd'
 import Child from './child';
 import './style.less';
 
@@ -73,8 +74,8 @@ export default class Father extends PureComponent {
     const { person, enable, enableB } = this.state;
     return (
       <div id='father'>
-        <button onClick={this.changeState}>点击</button>
         <Child person={person} />
+        <Button type="primary" onClick={this.changeState}>点击</Button>
         <div id='pattern' onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseOut} className="pattern">
           <CSSTransition
