@@ -52,6 +52,9 @@ ReactDom.render(
                   <Menu.Item>
                     <Link to="/test">test</Link>
                   </Menu.Item>
+                  <Menu.Item>
+                    <Link to="/canvas">canvas</Link>
+                  </Menu.Item>
                 </SubMenu>
               </Menu>
             </div>
