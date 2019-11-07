@@ -1,5 +1,5 @@
 import React, {Component, PureComponent} from 'react';
-import QRCode  from 'qrcode';
+import QrCode  from 'qrcode';
 import PropType from 'prop-types';
 
 export default class Canvas extends PureComponent {
@@ -11,32 +11,36 @@ export default class Canvas extends PureComponent {
     }
   }
 
-  drawAndShareImage = () => {
+  drawAndShareImage = async () => {
     const { qrurl } = this.state;
     const canvas = document.createElement("canvas");
     const w = 404;
     const h = 404;
     const uW = 80;
     const uH = 80;
+    const radius = 8;
     canvas.width = w;
     canvas.height = h;
     const context = canvas.getContext("2d");
     context.rect(0, 0, w, h);
-    context.fillStyle = "#fff";
+    context.fillStyle = "red";
+    // context.fillStyle = "#fff";
     context.fill();
     const myImage = new Image();
     // myImage.crossOrigin = 'anonymous';
-    myImage.setAttribute('crossOrigin', 'anonymous')
-    QRCode.toDataURL(qrurl).then((url) => {
-      myImage.src = url;  //背景图片 你自己本地的图片或者在线图片
-      // + '?time=' + new Date().valueOf()
-    }).catch(err => {
-      console.log('err', err)
-    })
+    myImage.setAttribute('crossOrigin', 'anonymous');
+    // QrCode.toDataURL(qrurl).then((url) => {
+    //   myImage.src = url;  //背景图片 你自己本地的图片或者在线图片
+    //   // + '?time=' + new Date().valueOf()
+    // }).catch(err => {
+    //   console.log('err', err)
+    // })
+    const qrBase64 = await QrCode.toDataURL(qrurl);
+    myImage.src = qrBase64;
     myImage.onload = () => {
       context.drawImage(myImage, 0, 0, w, h);
-      context.font = "60px Courier New";
-      context.fillText("我是文字", 350, 450);
+      context.font = "60px Arial New";
+      context.fillText("我是文字", 90, 100);
       const myImage2 = new Image();
       // myImage2.crossOrigin = 'anonymous';
       myImage2.setAttribute('crossOrigin', 'anonymous');
@@ -46,7 +50,7 @@ export default class Canvas extends PureComponent {
         const x = (w - uW) / 2;
         const y = (h - uH) / 2;
         context.drawImage(myImage2, x, y, uW, uH);
-        this.roundRect(context, x - 2, y - 2, uW + 4, uH + 4, 8)
+        this.roundRect(context, x - 2, y - 2, uW + 2, uH + 2, radius)
         const base64 = canvas.toDataURL("image/jpg"); //"image/png" 这里注意一下
         const img = document.getElementById('avatar');
         img.setAttribute('src' , base64);
@@ -64,7 +68,7 @@ export default class Canvas extends PureComponent {
     // ctx.setFillStyle('white')
     // ctx.setLineWidth(4);
     ctx.strokeStyle = 'white';
-    ctx.fillStyle = 'white';
+    // ctx.fillStyle = 'white';
     ctx.lineWidth = 4;
     ctx.moveTo(x + r, y);
     ctx.arcTo(x + w, y, x + w, y + h, r);
