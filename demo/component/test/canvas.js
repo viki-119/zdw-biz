@@ -50,7 +50,7 @@ export default class Canvas extends PureComponent {
         const x = (w - uW) / 2;
         const y = (h - uH) / 2;
         context.drawImage(myImage2, x, y, uW, uH);
-        this.roundRect(context, x - 2, y - 2, uW + 2, uH + 2, radius)
+        this.roundRect(context, x - 2, y - 2, uW + 2, uH + 2, radius);
         const base64 = canvas.toDataURL("image/jpg"); //"image/png" 这里注意一下
         const img = document.getElementById('avatar');
         img.setAttribute('src' , base64);

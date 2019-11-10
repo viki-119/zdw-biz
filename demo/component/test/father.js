@@ -1,8 +1,9 @@
 import React, {Component, PureComponent} from 'react';
 import PropType from 'prop-types';
 import {CSSTransition, TransitionGroup,} from 'react-transition-group';
-import { Button } from 'antd'
+import { Button } from 'antd';
 import Child from './child';
+import MyQrCode from '../../../src/my-qrcode';
 import './style.less';
 
 export default class Father extends PureComponent {
@@ -70,7 +71,7 @@ export default class Father extends PureComponent {
     })
   };
   render() {
-    console.log('father render');
+    console.log('father render')
     const { person, enable, enableB } = this.state;
     return (
       <div id='father'>
@@ -99,6 +100,7 @@ export default class Father extends PureComponent {
           >
             <div className='enableB'>未中奖</div>
           </CSSTransition>
+          <MyQrCode />
         </div>
       </div>
     );

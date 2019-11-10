@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.7.2",
     "antd": "^3.23.4",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -31,6 +32,7 @@
     "editorconfig": "^0.15.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-elemefe": "^0.3.0",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -46,17 +48,17 @@
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.2",
-    "zdw-biz": "^1.1.0",
+    "zdw-biz": "^1.0.10",
     "zdw-utils": "^1.0.3"
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "del /S /F /Q lib && npx babel src --watch -D -d lib",
     "webpack": "rimraf dist && webpack --mode development --watch --hot --progress",
     "clean": "rimraf dist ./lib",
     "update": "rimraf ./node_modules && cnpm install",
-    "lint": "eslint --fix --ext .js,.jsx src"
+    "lint": "eslint --fix --ext .js,.jsx src,demo",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,7 @@
-import React, {Component, PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
+// import cc from 'eslint-config-elemefe';
+// import yy from 'eslint-config-airbnb';
 
 export default class Child extends PureComponent {
   // componentDidCatch(err, info) {
@@ -9,7 +11,7 @@ export default class Child extends PureComponent {
   render() {
     console.log('Child render');
     const { person } = this.props;
-    return(
+    return (
       <div className="child-render">
         {person.name}
       </div>
