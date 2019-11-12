@@ -1,4 +1,4 @@
-import React, {Component, PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
 import {CSSTransition, TransitionGroup,} from 'react-transition-group';
 import { Button } from 'antd';
@@ -15,7 +15,7 @@ export default class Father extends PureComponent {
       },
       age: 1,
       enable: true,
-      enableB: false,
+      enableB: false
     };
     console.log('constructor');
   }
@@ -49,7 +49,7 @@ export default class Father extends PureComponent {
     console.log('onMouseOver');
     this.setState({
       enable: false,
-      enableB: true,
+      enableB: true
     });
   }
 
@@ -57,7 +57,7 @@ export default class Father extends PureComponent {
     console.log('onMouseOut');
     this.setState({
       enable: true,
-      enableB: false,
+      enableB: false
     });
   }
 
@@ -69,19 +69,22 @@ export default class Father extends PureComponent {
       // person: {...person}
       age: '1' // 这里的浅比较用的是=== 而非==
     });
-  };
+  }
+
   render() {
-    console.log('father render')
+    console.log('father render');
     const { person, enable, enableB } = this.state;
     return (
-      <div id='father'>
+      <div id="father">
         <Child person={person} />
         <Button type="primary" onClick={this.changeState}>点击</Button>
-        <div id='pattern' onMouseOver={this.onMouseOver}
-        onMouseLeave={this.onMouseOut} className="pattern">
+        <div id="pattern"
+          onMouseOver={this.onMouseOver}
+          onMouseLeave={this.onMouseOut} onFocus={() => {}} className="pattern"
+        >
           <CSSTransition
             // 组件名，提供css选择器使用，必填参数，如果缺少了，程序会崩溃报错，注意这个参数带's'
-            classNames='animation'
+            classNames="animation"
             // 组件是否展示,true为显示
             in={enable}
             // 动画持续时间，需要和css的设置保持一致
@@ -89,16 +92,15 @@ export default class Father extends PureComponent {
             // 当in的属性变为false之后，卸载组件，过程可设置动画
             unmountOnExit
           >
-            {/*CSSTransition的子组件，必须是个函数，或者组件*/}
+            {/* CSSTransition的子组件，必须是个函数，或者组件 */}
             <div>开奖号码</div>
           </CSSTransition>
-          <CSSTransition
-            classNames='animation'
+          <CSSTransition classNames="animation"
             in={enableB}
             timeout={1000}
             unmountOnExit
           >
-            <div className='enableB'>未中奖</div>
+            <div className="enableB">未中奖</div>
           </CSSTransition>
           <MyQrCode />
         </div>

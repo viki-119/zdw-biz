@@ -1,54 +1,62 @@
 // 参考链接 https://www.jianshu.com/p/c8d9900c0e95
 {
-  "extends": "elemefe",
-  // "extends": "eslint-config-airbnb",
-  // "root": true,
-  "parser": "babel-eslint"
-  // "env": {// 指定脚本的运行环境，支持定义多个
-  //   "browser": true,
-  //   "node": true,
-  //   "commonjs": true,
-  //   "es6": true
-  //   // "jest": true,
-  //   // "amd": false,
-  //   // "mocha": false,
-  //   // "jasmine": false
-  // },
-  // "plugins": [
-  //   "react",
-  //   "import",
-  //   "jsx-a11y"
-  //   // "html"
-  // ],
-  // "parserOptions": {
-  //   "ecmaVersion": 6, // 指定想要支持的javascript版本,这里6表示es6
-  //   "sourceType": "module", // 默认为"script",代码是ECMAScript准则，则设置为"module"
-  //   "ecmaFeatures": {
-  //     "experimentalObjectRestSpread": true,
-  //     "jsx": true
-  //   },
-  //   "allowImportExportEverywhere": true  //ignore eslint error: 'import' and 'export' may only appear at the top level
-  // }
-  // // // "extends": "eslint:recommended",
-  // // // 使用第三方airbnb
-  // // "extends": "airbnb",
-  // // // airbnb包括以下三个插件，插件名称可以省略eslint-plugin-前缀
-  // "rules": {
-  //   "semi": [2, "always"],
-  //   "indent": ["error", 4],
-  //   // "indent": [
-  //   //   "error",
-  //   //   "tab"
-  //   // ],
-  //   // "linebreak-style": [
-  //   //     "error",
-  //   //     "windows"
-  //   // ],
-  //   "linebreak-style": 0,
-  //   "quotes": [
-  //       "error",
-  //       "single"
-  //   ],
-  //   "comma-dangle": ["error","never"] //禁止末尾逗号
-  // }
+  "root": true,
+  // "extends": "elemefe",
+  // "extends": "eslint:recommended",
+  // 使用第三方airbnb
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {// 指定脚本的运行环境，支持定义多个
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+    // "amd": false,
+    // "mocha": false,
+    // "jasmine": false
+  },
+  // airbnb包括以下三个插件，插件名称可以省略eslint-plugin-前缀
+  "plugins": [
+    "react",
+    "import",
+    "jsx-a11y"
+    // "html"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6, // 指定想要支持的javascript版本,这里6表示es6
+    "sourceType": "module", // 默认为"script",代码是ECMAScript准则，则设置为"module"
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "allowImportExportEverywhere": true  //ignore eslint error: 'import' and 'export' may only appear at the top level
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "indent": ["error", 2],
+    "no-console": 0,
+    // "indent": [
+    //   "error",
+    //   "tab"
+    // ],
+    // "linebreak-style": [
+    //     "error",
+    //     "windows"
+    // ],
+    "linebreak-style": 0,
+    "quotes": [
+        "error",
+        "single"
+    ],
+    "comma-dangle": ["error","never"], //禁止末尾逗号
+    // "comma-dangle": ["error","always"], //禁止末尾逗号
+
+    "react/jsx-filename-extension": 0,
+    "react/static-property-placement": 0,
+    "react/forbid-prop-types": 0,
+    "react/require-default-props": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-max-props-per-line": 0
+  }
 }
