@@ -4,9 +4,9 @@ import PropType from 'prop-types';
 // import yy from 'eslint-config-airbnb';
 
 export default class Child extends PureComponent {
-  // componentDidCatch(err, info) {
-  //   console.log('ddddd', err, info)
-  // }
+  componentDidCatch(err, info) {
+    console.log('ddddd', err, info);
+  }
 
   render() {
     console.log('Child render');

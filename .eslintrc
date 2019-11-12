@@ -1,9 +1,9 @@
 // 参考链接 https://www.jianshu.com/p/c8d9900c0e95
 {
-  "extends": "elemefe"
-  // "extends": "airbnb"
+  "extends": "elemefe",
+  // "extends": "eslint-config-airbnb",
   // "root": true,
-  // "parser": "babel-eslint",
+  "parser": "babel-eslint"
   // "env": {// 指定脚本的运行环境，支持定义多个
   //   "browser": true,
   //   "node": true,

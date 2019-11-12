@@ -1,15 +1,26 @@
 # http://editorconfig.org
+# 表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件。
+# https://www.cnblogs.com/xiyangbaixue/p/4201490.html
 root = true
 
 [*]
+# 设置缩进风格，tab或者空格。tab是hard tabs，space为soft tabs。
 indent_style = space
+# indent_size: 缩进的宽度，即列数，整数。如果indent_style为tab，则此属性默认为tab_width。
 indent_size = 2
+# tab_width: 设置tab的列数。默认是indent_size。
+
+# 换行符，lf、cr和crlf
 end_of_line = lf
+# 设为true表明使文件以一个空白行结尾
 insert_final_newline = true
+# 编码，latin1、utf-8、utf-8-bom、utf-16be和utf-16le，不建议使用utf-8-bom。
 charset = utf-8
+# 设为true表示会除去换行行首的任意空白字符。
 trim_trailing_whitespace = true
 
 [*.md]
+# 设为true表示会除去换行行首的任意空白字符。
 trim_trailing_whitespace = false
 
 [Makefile]

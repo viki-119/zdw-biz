@@ -8,7 +8,7 @@ export default class Canvas extends PureComponent {
     super(props);
     this.state = {
       qrurl: 'http://www.baidu.com',
-    }
+    };
   }
 
   drawAndShareImage = async () => {

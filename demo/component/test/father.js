@@ -46,19 +46,19 @@ export default class Father extends PureComponent {
   // }
 
   onMouseOver = () => {
-    console.log('onMouseOver')
+    console.log('onMouseOver');
     this.setState({
       enable: false,
       enableB: true,
-    })
+    });
   }
 
   onMouseOut = () => {
-    console.log('onMouseOut')
+    console.log('onMouseOut');
     this.setState({
       enable: true,
       enableB: false,
-    })
+    });
   }
 
   changeState = () => {
@@ -67,8 +67,8 @@ export default class Father extends PureComponent {
     this.setState({
       person,
       // person: {...person}
-      age: '1', // 这里的浅比较用的是=== 而非==
-    })
+      age: '1' // 这里的浅比较用的是=== 而非==
+    });
   };
   render() {
     console.log('father render')
