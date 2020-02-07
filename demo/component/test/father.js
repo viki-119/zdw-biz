@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
-import {CSSTransition, TransitionGroup,} from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Button } from 'antd';
 import Child from './child';
 import MyQrCode from '../../../src/my-qrcode';
@@ -62,7 +62,7 @@ export default class Father extends PureComponent {
   }
 
   changeState = () => {
-    let { person } = this.state;
+    const { person } = this.state;
     person.name = 'sxt2';
     this.setState({
       person,

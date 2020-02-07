@@ -1,6 +1,7 @@
 # http://editorconfig.org
-# 表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件。
+# https://blog.csdn.net/Gabriel_wei/article/details/90286668
 # https://www.cnblogs.com/xiyangbaixue/p/4201490.html
+# 表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件。
 root = true
 
 [*]

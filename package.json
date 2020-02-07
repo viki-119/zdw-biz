@@ -5,6 +5,7 @@
   "author": "张大伟",
   "main": "lib/index.js",
   "dependencies": {
+    "animate.css": "^3.7.2",
     "classnames": "^2.2.6",
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
@@ -43,6 +44,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "rimraf": "^3.0.0",
     "style-loader": "^1.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "webpack": "^4.40.0",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0",

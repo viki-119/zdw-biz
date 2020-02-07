@@ -1,11 +1,12 @@
 // 参考链接 https://www.jianshu.com/p/c8d9900c0e95
+// 参考链接 https://www.jianshu.com/p/d848482ecf26
 {
   "root": true,
   // "extends": "elemefe",
   // "extends": "eslint:recommended",
   // 使用第三方airbnb
   "extends": "airbnb",
-  "parser": "babel-eslint",
+  "parser": "babel-eslint", // ESLint 默认使用Espree作为其解析器，平常项目中我一般使用babel-eslint作为parser。
   "env": {// 指定脚本的运行环境，支持定义多个
     "browser": true,
     "node": true,
@@ -24,18 +25,20 @@
     // "html"
   ],
   "parserOptions": {
-    "ecmaVersion": 6, // 指定想要支持的javascript版本,这里6表示es6
-    "sourceType": "module", // 默认为"script",代码是ECMAScript准则，则设置为"module"
+    "ecmaVersion": 6, // 指定ECMAScript版本，默认为5,这里6表示es6 | 8
+    "sourceType": "module", // 默认为"script"; 代码是ECMAScript准则，则设置为"module"
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
-      "jsx": true
+      "jsx": true // true 启用jsx
     },
     "allowImportExportEverywhere": true  //ignore eslint error: 'import' and 'export' may only appear at the top level
   },
+  "globals": {}, // 项目中特殊的全局变量
   "rules": {
     "semi": [2, "always"],
     "indent": ["error", 2],
     "no-console": 0,
+    "prefer-destructuring": 0, // 强制使用解构
     // "indent": [
     //   "error",
     //   "tab"
@@ -52,11 +55,19 @@
     "comma-dangle": ["error","never"], //禁止末尾逗号
     // "comma-dangle": ["error","always"], //禁止末尾逗号
 
+    "object-curly-newline": 0,
+    "import/no-extraneous-dependencies": 0,
+    // react相关
     "react/jsx-filename-extension": 0,
     "react/static-property-placement": 0,
     "react/forbid-prop-types": 0,
     "react/require-default-props": 0,
     "react/jsx-first-prop-new-line": 0,
-    "react/jsx-max-props-per-line": 0
+    "react/jsx-max-props-per-line": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/destructuring-assignment": 0,
+    "react/button-has-type": 0
   }
 }

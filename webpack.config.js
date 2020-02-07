@@ -5,9 +5,9 @@ const merge = require('webpack-merge');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const package_name = process.env.npm_package_name;
-const package_version = process.env.npm_package_version;
-const outPath = `dist/${package_name}/${package_version}/`;
+const packageName = process.env.npm_package_name;
+const packageVersion = process.env.npm_package_version;
+const outPath = `dist/${packageName}/${packageVersion}/`;
 
 module.exports = merge({}, {
   mode: 'development',
@@ -21,7 +21,8 @@ module.exports = merge({}, {
   },
   devServer: {
     port: 8000,
-    open: true
+    open: true,
+    host: 'local.host.net' // 默认是localhost
   },
   // eslint: {
   //   configFile: './.eslintrc'
@@ -67,11 +68,11 @@ module.exports = merge({}, {
               '@babel/preset-react',
               '@babel/preset-flow'
             ],
-            'plugins': [
+            plugins: [
               ['import', {
-                'libraryName': 'antd',
-                'libraryDirectory': 'es',
-                'style': 'css' // `style: true` 会加载 less 文件
+                libraryName: 'antd',
+                libraryDirectory: 'es',
+                style: 'css' // `style: true` 会加载 less 文件
               }]
             ]
           }
